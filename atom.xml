@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>锵锵杂记</title>
+  
+  <subtitle>信马由缰无主题记事本</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://wewei.github.io/"/>
+  <updated>2018-11-14T14:45:36.497Z</updated>
+  <id>http://wewei.github.io/</id>
+  
+  <author>
+    <name>魏玮</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算广告学读书笔记·二</title>
+    <link href="http://wewei.github.io/2018/11/14/%E8%AE%A1%E7%AE%97%E5%B9%BF%E5%91%8A%E5%AD%A6%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%C2%B7%E4%BA%8C/"/>
+    <id>http://wewei.github.io/2018/11/14/计算广告学读书笔记·二/</id>
+    <published>2018-11-14T14:45:02.000Z</published>
+    <updated>2018-11-14T14:45:36.497Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="第二章-计算广告基础"><a href="#第二章-计算广告基础" class="headerlink" title="第二章 计算广告基础"></a>第二章 计算广告基础</h1><h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>关键术语，及缩写打卡。</p><table><thead><tr><th>术语</th><th>解释</th></tr></thead><tbody><tr><td>eCPM</td><td>expected Cost Per Mille, 千次展示期望收入</td></tr><tr><td>CTR</td><td>Click Through Rate, 点击率</td></tr><tr><td>CVR</td><td>Conversion Rate, 转化率</td></tr><tr><td>CPC</td><td>Cost Per Click, 按点击结算</td></tr><tr><td>CPS</td><td>Cost Per Sale, 按订单数结算</td></tr><tr><td>CPA</td><td>Cost Per Action, 按转化行为数结算</td></tr><tr><td>CPT</td><td>Cost Per Time, 按时间结算</td></tr><tr><td>IAB</td><td>Interactive Advertising Bureau, 交互广告局</td></tr><tr><td>VAST</td><td>digital Video Ad Serving Template, 视频广告标准</td></tr><tr><td>OpenRTB</td><td>通用实时竞价接口标准</td></tr><tr><td>4A</td><td>American Association of Advertising Agency, 美国广告代理协会</td></tr><tr><td>ANA</td><td>Association of National Advertisers, 美国国家广告商协会</td></tr></tbody></table><h2 id="信息接受过程"><a href="#信息接受过程" class="headerlink" title="信息接受过程"></a>信息接受过程</h2><p>三阶段，六步骤。</p><p><strong>越靠前，对点击影响越大，越靠后，对转化影响越大。</strong></p><p><img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuIfAJIv9p4lFILLusT3vh7kbGZMNWeB6izbpdxPsQYhesYbeF6tT_6pp2askMYuanI-MBtxPtWLH_7n26v0BKVoiR-dJ_kbeYfyrD3xTjGoY-Cd-kSzw6g4cjsr-ldOQM37C5WNT590Cr4Wkc7bGOQXcBeVKl1IWum40"></p><h2 id="互联网广告的技术特点"><a href="#互联网广告的技术特点" class="headerlink" title="互联网广告的技术特点"></a>互联网广告的技术特点</h2><ol><li>技术和计算导向</li><li>效果可衡量性</li><li>创意和投放方式的标准化</li><li>媒体概念的多样化</li><li>数据驱动的投放决策</li></ol><h2 id="计算广告的核心问题"><a href="#计算广告的核心问题" class="headerlink" title="计算广告的核心问题"></a>计算广告的核心问题</h2><p>Find the best match between a given user in a given context and a suitable advertisement.</p><p>简言之，就是<code>&lt;Supply, Audience&gt; -&gt; &lt;Demand&gt;</code>的优化匹配问题。<br>给定场景与受众，优选最佳的广告。</p><h3 id="在线广告产生效果的步骤"><a href="#在线广告产生效果的步骤" class="headerlink" title="在线广告产生效果的步骤"></a>在线广告产生效果的步骤</h3><p><img src="https://www.plantuml.com/plantuml/svg/AqfDBadCIyz9LNYwQjAJlPCLghaK58eGWXkdFk_Ry7BXLgvQBYuauPtxdqxiUh9Zz_Ez4v-ldeccwSM4lK_dW3MXYEvTyxHd6jGekBaAkaMwTWWT2bOApvjsFctVpOKGWgY0wGQgWB01"></p><h3 id="结算方式"><a href="#结算方式" class="headerlink" title="结算方式"></a>结算方式</h3><table><thead><tr><th>结算方式</th><th>点击率预估</th><th>点击价值预估</th><th>优缺点</th><th>适用场景</th></tr></thead><tbody><tr><td>CPT</td><td>需求方</td><td>需求方</td><td>可以充分发挥橱窗效应<br>无法利用受众定向技术</td><td>高曝光的品牌广告</td></tr><tr><td>CPM</td><td>需求方</td><td>需求方</td><td>可以利用受众定向选择目标人群<br>合约售卖下，受众划分不能过细</td><td>1. 有受众选择需求的品牌广告<br>2. 实时竞价广告交易</td></tr><tr><td>CPC</td><td>供给方</td><td>需求方</td><td>可以非常精细的划分受众人群<br>比较合适的需求方和供给方分工</td><td>竞价广告网络</td></tr><tr><td>CPS<br>CPA<br>ROI</td><td>供给方</td><td>供给方</td><td>需求方无任何风险<br>供给方运营难度较大</td><td>1. 效果类广告联盟<br>2. 效果类DSP</td></tr></tbody></table><h2 id="在线广告商业协会"><a href="#在线广告商业协会" class="headerlink" title="在线广告商业协会"></a>在线广告商业协会</h2><table><thead><tr><th>协会</th><th>利益方</th><th>代表成员</th></tr></thead><tbody><tr><td>IAB</td><td>供给方</td><td>Google, Facebook, Yahoo!, Microsoft</td></tr><tr><td>4A</td><td>品牌广告代理商</td><td>奥美，智威汤逊，麦肯</td></tr><tr><td>ANA</td><td>需求方</td><td>AT&amp;T, 宝洁, NBA</td></tr></tbody></table><h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><blockquote><p><strong>Q:</strong> CPA/ROI的结算方式看似对广告主有利，实际也催生了一些变形的推广方式。<br>请考察你接触到的CPA/ROI渠道，并研究其与CPM或CPC渠道的关键差异。</p><p><strong>A:</strong> 按CPS/CPA/ROI结算，需要需求方按供给方的要求建立Tracking转化的机制。<br>如果转化率过低，广告被展示的机会会减少，仍不符合需求方的利益。<br>怀疑书中的描述有误，难度较大的应该是供给方的运营。一般广告主会委托专业的代理公司<br>运营此类广告。</p></blockquote><blockquote><p><strong>Q:</strong> 对广告产品而言，优化利润与优化ROI有什么区别？</p><p><strong>A:</strong> 不同计费类型的广告，优化利润的方式是不同的。</p><ul><li>按CPS/CPA/ROI结算的产品，优化利润与优化ROI是一致的。</li><li>按CPT结算的广告，优化利润重在<ul><li>最大化广告时间</li><li>选择单位时间付费更高的广告</li></ul></li><li>按CPM结算的广告，优化利润重在选择竞价较高的广告</li><li>按CPC结算的广告，优化利润重在优化点击率</li></ul></blockquote><blockquote><p><strong>Q:</strong> 在社交网络中发生的传播营销过程与典型的展示、点击、转化流程有很大不同，<br>请对此建立一个合理的模型，并分析其中的关键量化指标。</p><p><strong>A:</strong> <strong>[TODO]</strong></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;第二章-计算广告基础&quot;&gt;&lt;a href=&quot;#第二章-计算广告基础&quot; class=&quot;headerlink&quot; title=&quot;第二章 计算广告基础&quot;&gt;&lt;/a&gt;第二章 计算广告基础&lt;/h1&gt;&lt;h2 id=&quot;术语&quot;&gt;&lt;a href=&quot;#术语&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="http://wewei.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="计算广告学" scheme="http://wewei.github.io/tags/%E8%AE%A1%E7%AE%97%E5%B9%BF%E5%91%8A%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算广告学读书笔记·一</title>
+    <link href="http://wewei.github.io/2018/11/13/%E8%AE%A1%E7%AE%97%E5%B9%BF%E5%91%8A%E5%AD%A6%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%C2%B7%E4%B8%80/"/>
+    <id>http://wewei.github.io/2018/11/13/计算广告学读书笔记·一/</id>
+    <published>2018-11-13T11:24:59.000Z</published>
+    <updated>2018-11-14T15:49:41.597Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="第一章-在线广告综述"><a href="#第一章-在线广告综述" class="headerlink" title="第一章 在线广告综述"></a>第一章 在线广告综述</h1><h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>关键术语，及缩写打卡。</p><table><thead><tr><th>术语</th><th>解释</th></tr></thead><tbody><tr><td>大数据的4V特征</td><td>Volume（规模），Varity（多样性），Velocity（速度）和Value（价值）</td></tr><tr><td>Demand</td><td>需求方，广告主（Advertiser）或代理商（Agency）。</td></tr><tr><td>Supply</td><td>供给方，媒体（Media）或类媒体平台，流量的拥有者。</td></tr><tr><td>Audience</td><td>受众</td></tr><tr><td>Brand Awareness</td><td>品牌广告</td></tr><tr><td>Direct Response</td><td>直接效果广告</td></tr><tr><td>ROI</td><td>Return on investment. 投入产出比。</td></tr><tr><td>GD</td><td>Guaranteed Delivery. 担保式投送</td></tr><tr><td>CPM</td><td>Cost per Mille. 千次展示付费</td><td></td></tr><tr><td>GSP</td><td>Generalized Second Price. 广义第二高价</td></tr><tr><td>ADN</td><td>Ad Network. 广告网络</td></tr><tr><td>CPC</td><td>Cost per Click. 按点击付费</td></tr><tr><td>RPM</td><td>Revenue per Mille. 千次展示收益</td></tr><tr><td>TD</td><td>Trading Desk. 交易终端</td></tr><tr><td>RTB</td><td>Real Time Bidding. 实时竞价</td></tr><tr><td>ADX</td><td>Ad Exchange. 广告交易平台</td></tr><tr><td>DSP</td><td>Demand Side Platform. 需求方平台</td></tr></tbody></table><h2 id="广告的目的"><a href="#广告的目的" class="headerlink" title="广告的目的"></a>广告的目的</h2><p>第一章思考题</p><table><thead><tr><th></th><th>品牌广告(Brand awareness)</th><th>直接效果广告(Direct response)</th></tr></thead><tbody><tr><td>目标</td><td>快速接触大量用户，宣传品牌形象</td><td>购买转化</td></tr><tr><td>投放周期</td><td>短</td><td>长</td></tr><tr><td>效果周期</td><td>中长期</td><td>立刻</td></tr><tr><td>重视指标</td><td>Impression</td><td>Conversion</td></tr></tbody></table><h2 id="广告创意类型"><a href="#广告创意类型" class="headerlink" title="广告创意类型"></a>广告创意类型</h2><table><thead><tr><th>英文名</th><th>中文名</th><th>目标倾向（个人见解）</th></tr></thead><tbody><tr><td>Banner Ad</td><td>横幅广告</td><td>品牌</td></tr><tr><td>Textual Ad</td><td>文字链广告</td><td>效果</td></tr><tr><td>Reach Media Ad</td><td>富媒体广告</td><td>品牌</td></tr><tr><td>Vedio Ad</td><td>视频广告</td><td>品牌</td></tr><tr><td>Social Ad</td><td>社交广告</td><td>效果</td></tr><tr><td>Mobile Ad</td><td>移动广告</td><td>品牌（如开屏广告）/效果（如推荐墙）</td></tr><tr><td>EDM (Email direct marketing)</td><td>邮件定向营销广告</td><td>效果</td></tr></tbody></table><h2 id="发展简史"><a href="#发展简史" class="headerlink" title="发展简史"></a>发展简史</h2><p><img src="https://www.plantuml.com/plantuml/svg/VPFBJXin58RtynGMgtOnBp2B2kXq6w6IHRPMx8OHcGdoE2ti0a8YJKkJ53M1a29LYde1AQLg2ya4qfVnfRn5psGo5oBKXKVsiSzt_kFVi-npp7ZLBHiR3g68kbjy1n7g5vcpnPsAPy0-fsX9jkew-2p7VsIxiOImZrPAZ5ANUdmL-vGOzvV8IlTH55aXBodZZkzu9IE13dkorSv0yvYLA0TSFB6Iq8C0VN4c9jTPLTLYg7gkAREmugt_o16ZXXYzKPs33F1fnUDqcrTnsKYdLYRyS6CpWBvjwqa_qcNd31YWWg0SvQygR3Cj6mpKyP6UrFN5z-WMR2DlG-SC4u0Yc_gR2-GeHOv_okRbd5y0Vc76VxPTtC1UYIOvT_sQ-h6dEkDCWhs-Pi2mWEvYZw3rqFsrCkOlAimr5kqqYVaaTS92eN7rA_csetlxuA1-FGuZpQwuwUhfGDmUgNTVxsgxaTZ4p0YJTGLGgRZwDttQKFsQ77m1yZtta6ao4t8prsuXrJ-KZK_oiYdFtqF9XOHPAJiNdllm2rwlc9xgoGdK-VjxNmMjq8sOchUJKtBG4wFpkLinf03ROlfH7Gv5441_SdYckbVo80ZVth07tqVFywkFGmDY95njjZTnSnosj4mz0h_QFm00"></p><h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><p><strong>[TODO]</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;第一章-在线广告综述&quot;&gt;&lt;a href=&quot;#第一章-在线广告综述&quot; class=&quot;headerlink&quot; title=&quot;第一章 在线广告综述&quot;&gt;&lt;/a&gt;第一章 在线广告综述&lt;/h1&gt;&lt;h2 id=&quot;术语&quot;&gt;&lt;a href=&quot;#术语&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+      <category term="读书笔记" scheme="http://wewei.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="计算广告学" scheme="http://wewei.github.io/tags/%E8%AE%A1%E7%AE%97%E5%B9%BF%E5%91%8A%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>尝试一下PlantUML</title>
+    <link href="http://wewei.github.io/2018/11/11/%E5%B0%9D%E8%AF%95%E4%B8%80%E4%B8%8BPlantUML/"/>
+    <id>http://wewei.github.io/2018/11/11/尝试一下PlantUML/</id>
+    <published>2018-11-10T16:14:36.000Z</published>
+    <updated>2018-11-14T13:39:01.559Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://www.plantuml.com/plantuml/svg/Aov9B2hXidhPsljyxpglnBB4vtthdovgjbRWidgoe_l5thq5YNabfRavUbc9HTPSLi_tJ7lQDlDPV_-B_HkUJMj_idiRIEMppkKl5lO0MSKb-GK0"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;https://www.plantuml.com/plantuml/svg/Aov9B2hXidhPsljyxpglnBB4vtthdovgjbRWidgoe_l5thq5YNabfRavUbc9HTPSLi_tJ7lQDlDPV_-B_HkUJMj_i
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://wewei.github.io/tags/hexo/"/>
+    
+      <category term="puml" scheme="http://wewei.github.io/tags/puml/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://wewei.github.io/2018/11/10/hello-world/"/>
+    <id>http://wewei.github.io/2018/11/10/hello-world/</id>
+    <published>2018-11-10T14:20:51.149Z</published>
+    <updated>2018-11-10T14:20:51.149Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
