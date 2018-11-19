@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wewei.github.io/"/>
-  <updated>2018-11-14T14:45:36.497Z</updated>
+  <updated>2018-11-19T13:52:23.480Z</updated>
   <id>http://wewei.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于交互设计一些思考·上</title>
+    <link href="http://wewei.github.io/2018/11/19/%E5%85%B3%E4%BA%8E%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83%C2%B7%E4%B8%8A/"/>
+    <id>http://wewei.github.io/2018/11/19/关于交互设计一些思考·上/</id>
+    <published>2018-11-19T11:27:30.000Z</published>
+    <updated>2018-11-19T13:52:23.480Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在为公司的产品做UX Refresh，我负责Shell Page，Router等基础框架等部分。虽然开源界已经有不少现成等产品可用，但由于产品本身的复杂性，我不得不思考用户场景背后隐藏的人机交互语言，并以此为模型，对现有开源库做谨慎的选择。</p><p>翻看了一些关于用户场景设计的文章，没有找到对这部分知识做系统阐述的，所以只能自己散乱的想了一些要点，记录下来，以待将来整理总结。</p><h2 id="人机交互背后的语言"><a href="#人机交互背后的语言" class="headerlink" title="人机交互背后的语言"></a>人机交互背后的语言</h2><p>人与人交流的语言，有叙述，祈使，感叹等目标。但对于人机交互，祈使是唯一的目标。当然，这里排除了微软小冰之类的情感人工智能的交互场景。</p><p>就语法结构而言，祈使句隐含了主语（我），谓语（想要），直接宾语（你），而把重点放在了动宾结构的间接宾语上。所以祈使句可以表示为<code>Verb(Obj1, Obj2, Obj3, ...)</code>。其中动词<code>Verb</code>表示要让计算机做的动作，<code>Obj1</code>，<code>Obj2</code>，<code>Obj3</code>等，表示了动作的各个参数。</p><p>由于计算机操作的对象实际上是应用背后的数据模型，所以参数列表不能为空。用语法术语来说，就是<code>Verb</code>必须是及物动词。我们可以把参数分为两类，数据模型所定义的对象<code>Target</code>s，和描述动作本身的参数<code>Argument</code>s。于是用户的动作可以表示为<code>Verb(Target1, Target2, ..., Argument1, Argument2, ...)</code>。</p><blockquote><p>Note, 大部分动作有一个<code>Target</code>，在Ads Management的场景下，某个关键词的竞价参数，<code>关键词</code>就是<code>Target</code>，而参数，如<code>匹配方式</code>，<code>出价</code>，是<code>Argument</code>s。也有一些动作带有两个参数，比如关联某个受众类别到制定的广告活动，<code>受众类别</code>和<code>广告活动</code>是<code>Target</code>，<code>关联类型</code>(targeting/exclusion)是<code>Argument</code>。</p></blockquote><p><br>我们在设计App的时候，每一个Use Case都可以转化为上述格式的动作。</p><blockquote><p>这种抽象不但适用于数据管理应用，也适用于游戏和IoT控制。比方说，在星际争霸游戏里，让某个高阶圣堂武士施放心灵风暴魔法，被选中的<code>高阶圣堂武士单位</code>是<code>Target</code>，施放心灵风暴魔法是动作，魔法施放的<code>位置坐标</code>是<code>Argument</code>。</p><p>当我们对小米AI音箱说“打开空气净化器”时，<code>空气净化器</code>是<code>Target</code>，没有特别的<code>Argument</code>。</p></blockquote><h2 id="GUI的用户交互"><a href="#GUI的用户交互" class="headerlink" title="GUI的用户交互"></a>GUI的用户交互</h2><p>我们对人机交互语言做了抽象，那么我们设计GUI的目的就明确了，即通过鼠标，键盘，触屏等操作，提取出上述动作。</p><p>这种提取方法有两种，动词导向和对象导向。</p><h3 id="动词导向的用户行为提取"><a href="#动词导向的用户行为提取" class="headerlink" title="动词导向的用户行为提取"></a>动词导向的用户行为提取</h3><p>用户先想到自己要做的动作，然后再选取相应的<code>Target</code>s和<code>Argument</code>s。典型的案例是各种现代编辑器中的<code>Ctrl+Shift+P</code>操作。适用与数据对象单一，但操作种类繁多的场景。代码编辑器的场景比较有代表性。Office产品传统的工具栏设计也属于此类。</p><h3 id="对象导向的用户行为提取"><a href="#对象导向的用户行为提取" class="headerlink" title="对象导向的用户行为提取"></a>对象导向的用户行为提取</h3><p>先把用户导航到要操作的数据对象上，然后根据上下文提供相应的操作选项。适用与数据对象复杂的场景。大多数的数据管理App，以及Office的Contextual Ribbon都属于此类。我们的广告管理平台自然也采用这种模式。</p><p>当我们把用户导航到某个（些）数据对象上时，我们称这个（些）对象为上下文（Context）。当用户想要作出某个动作时，上下文会作为动作的某个<code>Target</code>自动带入。</p><p>于是我们的UI设计就分成两个层次</p><ul><li>导航（Navigation），把用户带入某个上下文场景中。</li><li>操作（Action），在特定上下文中执行相应的操作。</li></ul><p>实现层面的Use Case大概为一下形式</p><p><img src="https://www.plantuml.com/plantuml/svg/ZPC_Qy905CVt-nIFx0xMdqWGgKFNBfrAXwkvnc2yaylPfNIpDBM8b0eTAfGE1N7GeOKYjlXbJDHlqSkHY6XDkmJUb_TvxvllIqgEm5mqwpP2JisY3Snn7PeEgM27m1K2ECILcibPanfbPZEkwxWYB4QBHJZ6DZdYX51qZP1DBWG81jmogm8CYnFLXf1iPnoqHM_WkvyQO0TE7C8H2XemDMq2tlXhwGxLCi4QmP1p9WIhRqo1jINDVtbRzE-zoSnxQFiVKwyzyDodvUj00rsd-D8oSMWls5HExaCNqrOSTx2FyzndlzMDGrE_e3VlgzveEUx4SMaaGUaO4aQY65gGpwXCgJ85YTEgPHY4dYar7JM5bRn48SYt04f8RkRiFtRct_r_vtmtMTrsvxEHtvj4hnwPNty2odWc7fD9xpBPlrO5AUzYkRrObF0karSHPRQ2ooerkwNcb9hRKlD1hEeoNDKPf2BduI1r5HxoyWXHaKUeHAWX_wqV"><br><br>之后一篇我将基于对象导向对行为提取模式，对UI设计中对常见问题展开讨论。包括</p><ol><li>哪些Navigation Use Case是必要的</li><li>Tabs, Side Panel, Modal, Lightbox, Popup等UI元素应如何选取</li><li>哪些页面应该是Routing可达的</li><li>我们应该如何提取UI Component</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近在为公司的产品做UX Refresh，我负责Shell Page，Router等基础框架等部分。虽然开源界已经有不少现成等产品可用，但由于产品本身的复杂性，我不得不思考用户场景背后隐藏的人机交互语言，并以此为模型，对现有开源库做谨慎的选择。&lt;/p&gt;
+&lt;p&gt;翻看了
+      
+    
+    </summary>
+    
+    
+      <category term="交互设计" scheme="http://wewei.github.io/tags/%E4%BA%A4%E4%BA%92%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="Web Design" scheme="http://wewei.github.io/tags/Web-Design/"/>
+    
+      <category term="Application Design" scheme="http://wewei.github.io/tags/Application-Design/"/>
+    
+  </entry>
   
   <entry>
     <title>计算广告学读书笔记·二</title>
